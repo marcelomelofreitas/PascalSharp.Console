@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net461;net471</TargetFrameworks>
+    <OutputPath>$(SolutionDir)bin\</OutputPath>
+    <RootNamespace>PascalABCCompiler</RootNamespace>
+    <OutputType>Exe</OutputType>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PascalSharp.Compiler" Version="0.1.1.1-ci.2018.2.13" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="App.ico" />
+  </ItemGroup>
+</Project>
