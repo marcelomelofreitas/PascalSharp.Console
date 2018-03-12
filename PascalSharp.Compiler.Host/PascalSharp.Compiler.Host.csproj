@@ -3,7 +3,7 @@
     <TargetFrameworks>net40;net471</TargetFrameworks>
     <OutputPath>$(SolutionDir)bin\</OutputPath>
     <OutputType>Exe</OutputType>
-    <Description>Pascal# Basic Command-line Compiler Executable</Description>
+    <Description>Pascal# Remote Compiler Daemon Host Executable</Description>
     <Product>Pascal#</Product>
     <Company>Pascal# Team</Company>
     <Authors>Pascal# Team</Authors>

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalSharp.Console", "PascalSharp.Console\PascalSharp.Console.csproj", "{9EC22DE5-FE1A-467A-96E8-A2673F4AFE23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalSharp.Console.Interactive", "PascalSharp.Console.Interactive\PascalSharp.Console.Interactive.csproj", "{9EC22DE5-FE1A-467A-96E8-A2673F4AFE23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalSharp.Console.Clear", "PascalSharp.Console.Clear\PascalSharp.Console.Clear.csproj", "{E0469AEC-1867-47DB-8F2D-EB02A18C7791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalSharp.Console", "PascalSharp.Console\PascalSharp.Console.csproj", "{E0469AEC-1867-47DB-8F2D-EB02A18C7791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalSharp.Compiler.Host", "PascalSharp.Compiler.Host\PascalSharp.Compiler.Host.csproj", "{8802F99D-5562-42E2-9041-3C2AB7AC6599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{E0469AEC-1867-47DB-8F2D-EB02A18C7791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0469AEC-1867-47DB-8F2D-EB02A18C7791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0469AEC-1867-47DB-8F2D-EB02A18C7791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8802F99D-5562-42E2-9041-3C2AB7AC6599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8802F99D-5562-42E2-9041-3C2AB7AC6599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8802F99D-5562-42E2-9041-3C2AB7AC6599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8802F99D-5562-42E2-9041-3C2AB7AC6599}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

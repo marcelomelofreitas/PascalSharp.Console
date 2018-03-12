@@ -7,7 +7,5 @@ Pascal# is being developed in Visual Studio Community 2017. Use IDE or MSBuild c
 Use any modern (5.4+) [Mono](http://www.mono-project.com/download/) MSBuild (not xbuild) to build Pascal# on non-Windows platforms.
 
 ## Roadmap
-* Get rid of 2 different binaries for command line compiler
 * Improve CLI arguments parser
 * Cleanup code
-* Implement a daemon to improve compilation performance

@@ -1,12 +1,17 @@
 ﻿// Copyright (©) Ivan Bondarev, Stanislav Mihalkovich (for details please see \doc\copyright.txt)
 // This code is distributed under the GNU LGPL (for details please see \doc\license.txt)
+
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using PascalABCCompiler;
+using PascalSharp.Internal.CompilerTools;
+using PascalSharp.Internal.Errors;
+using PascalSharp.Internal.Localization;
 
-namespace PascalABCCompiler
+namespace PascalSharp.Compiler.Host
 {
     internal class SourceFile
     {
@@ -15,20 +20,18 @@ namespace PascalABCCompiler
     }
     public class CommandConsoleCompiler
     {
-        
-
         private Compiler compiler;
 
-        private void ChangeCompilerState(ICompiler sender, PascalABCCompiler.CompilerState State, string FileName)
+        private void ChangeCompilerState(ICompiler sender, CompilerState State, string FileName)
         {
             switch (State)
             {
                 case CompilerState.CompilationFinished:
                     if (compiler.ErrorsList.Count > 0)
-                        foreach (Errors.Error er in compiler.ErrorsList)
+                        foreach (var er in compiler.ErrorsList)
                             SendErrorOrWarning(er);
                     if (compiler.Warnings.Count > 0)
-                        foreach (Errors.Error er in compiler.Warnings)
+                        foreach (var er in compiler.Warnings)
                             SendErrorOrWarning(er);
                     SendCommand(ConsoleCompilerConstants.LinesCompiled, compiler.LinesCompiled.ToString());
                     SendCommand(ConsoleCompilerConstants.BeginOffest, compiler.BeginOffset.ToString());
@@ -145,12 +148,12 @@ namespace PascalABCCompiler
             Console.Out.Write(command + ConsoleCompilerConstants.DataSeparator);
             Console.Out.Flush();
         }
-        void SendErrorOrWarning(Errors.Error er)
+        void SendErrorOrWarning(Error er)
         {
             string str = er.Message;
-            if (er is Errors.LocatedError)
+            if (er is LocatedError)
             {
-                Errors.LocatedError le = er as Errors.LocatedError;
+                LocatedError le = er as LocatedError;
                 if (le.SourceLocation != null)
                 {
                     str += ConsoleCompilerConstants.MessageSeparator + le.SourceLocation.BeginPosition.Line;
@@ -163,10 +166,10 @@ namespace PascalABCCompiler
                     if (le.fileName != null && le.fileName != "")
                         str += ConsoleCompilerConstants.MessageSeparator + le.fileName;
             }
-            if (er is Errors.CompilerWarning)
+            if (er is CompilerWarning)
                 SendCommand(ConsoleCompilerConstants.Warning, str);
             else
-                if (er is Errors.CompilerInternalError)
+                if (er is CompilerInternalError)
                     SendCommand(ConsoleCompilerConstants.InternalError, str);
                 else
                     SendCommand(ConsoleCompilerConstants.Error, str);
@@ -314,5 +317,12 @@ namespace PascalABCCompiler
         {
             SendCommand(ConsoleCompilerConstants.WorkingSet, Environment.WorkingSet.ToString());
         }
+
+        public static int Main(string[] initialArgs)
+		{
+            StringResourcesLanguage.LoadDefaultConfig();
+
+            return (new CommandConsoleCompiler()).Run();
+		}
     }
 }
