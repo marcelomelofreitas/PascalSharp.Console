@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using PascalABCCompiler.Errors;
 using PascalSharp.Compiler;
 using PascalSharp.Internal.CompilerTools.Errors;
 using PascalSharp.Internal.Errors;
 using PascalSharp.Internal.Localization;
+using PascalSharp.Internal.ParserTools;
 
 namespace PascalSharp.Console.Interactive
 {

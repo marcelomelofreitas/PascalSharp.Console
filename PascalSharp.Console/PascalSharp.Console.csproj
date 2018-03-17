@@ -8,9 +8,10 @@
     <Company>Pascal# Team</Company>
     <Authors>Pascal# Team</Authors>
     <Copyright>Copyright © 2018 Pascal# Team © 2005 Ivan Bondarev, Stanislav Mihalkovich</Copyright>
+    <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PascalSharp.Compiler" Version="0.1.2.1000-ci.2018.3.12" />
+    <PackageReference Include="PascalSharp.Compiler" Version="0.1.6-ci.2018.3.17" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />

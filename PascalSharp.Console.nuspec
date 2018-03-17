@@ -9,13 +9,13 @@
         <projectUrl>https://github.com/PascalSharp/PascalSharp.Console</projectUrl>
         <!-- <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl> -->
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Reorganize for repo separation, split remote compiler host executable into separate executable</releaseNotes>
-        <description>Pascal# Command-Line Compiler</description>
+        <releaseNotes>Bump compiler library version</releaseNotes>
+        <description>Pascal# Command-Line Compiler Executables</description>
         <copyright>Copyright © 2018 Pascal# Team</copyright>
         <tags>pascal c# dotnet compiler</tags>
         
         <dependencies>
-            <dependency id="PascalSharp.Compiler" version="[0.1.2.1000,1)" />
+            <dependency id="PascalSharp.Compiler" version="[0.1.6-ci.2018.3.17,1)" />
         </dependencies>
     </metadata>
 

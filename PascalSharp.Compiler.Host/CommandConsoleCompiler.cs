@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-using PascalABCCompiler;
 using PascalSharp.Internal.CompilerTools;
 using PascalSharp.Internal.Errors;
 using PascalSharp.Internal.Localization;
+using PascalSharp.Internal.ParserTools;
+using PascalSharp.Internal.SyntaxTree;
 
 namespace PascalSharp.Compiler.Host
 {
@@ -73,7 +74,7 @@ namespace PascalSharp.Compiler.Host
                     /*TextReader tr = new StreamReader(FileName, System.Text.Encoding.GetEncoding(1251));
                     text = tr.ReadToEnd();
                     tr.Close();*/
-                    text = PascalABCCompiler.FileReader.ReadFileContent(FileName, null);
+                    text = FileReader.ReadFileContent(FileName, null);
                     return text;
                 case SourceFileOperation.Exists:
                     if (SourceFiles.ContainsKey(fn))
@@ -275,7 +276,7 @@ namespace PascalSharp.Compiler.Host
                 case ConsoleCompilerConstants.CompilerOptionsStandartModule:
                     CompilerOptions.StandartModule sm = new CompilerOptions.StandartModule(args[0],
                         (CompilerOptions.StandartModuleAddMethod)Convert.ToInt32(args[1]),
-                        (PascalABCCompiler.SyntaxTree.LanguageId)Convert.ToInt32(args[2]));
+                        (LanguageId)Convert.ToInt32(args[2]));
                     compiler.CompilerOptions.StandartModules.Add(sm);
                     break;
                 case ConsoleCompilerConstants.InternalDebug:
